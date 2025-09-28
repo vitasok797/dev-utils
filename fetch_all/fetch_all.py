@@ -3,8 +3,8 @@ import sys
 from pathlib import Path
 
 
-def fetch_dir(target_dir: Path):
-    print(f'Fetching "{target_dir.name}"...', end='')
+def fetch_dir(target_dir: Path) -> None:
+    print(f'Fetching "{target_dir.name}"... ', end='')
 
     args = ['git', 'fetch', '--all']
 
@@ -16,9 +16,9 @@ def fetch_dir(target_dir: Path):
                 shell=True,
                 check=True,
                 )
-        print(' OK')
+        print('OK')
     except subprocess.CalledProcessError:
-        print(' error')
+        print('error')
         sys.exit(1)
 
 
