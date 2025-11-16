@@ -6,6 +6,10 @@ from pathlib import Path
 def fetch_dir(target_dir: Path) -> None:
     print(f'Fetching "{target_dir.name}"... ', end='')
 
+    if not target_dir.is_dir():
+        print('Error (target dir not found)')
+        sys.exit(1)
+
     args = ['git', 'fetch', '--all']
 
     try:
@@ -18,12 +22,12 @@ def fetch_dir(target_dir: Path) -> None:
                 )
         print('OK')
     except subprocess.CalledProcessError:
-        print('error')
+        print('Error (git process finished with an error)')
         sys.exit(1)
 
 
 def main() -> None:
-    work_dir = Path(__file__).parent
+    work_dir = Path()
     dir_items = work_dir.glob('*')
     dirs = [item for item in dir_items if item.is_dir()]
 
