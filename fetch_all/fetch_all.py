@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 def fetch_dir(target_dir: Path) -> None:
-    print(f'Fetching "{target_dir.name}"... ', end='')
+    print(f'Fetching "{target_dir.name}"... ', end='', flush=True)
 
     if not target_dir.is_dir():
         print('Error (target dir not found)')
@@ -21,8 +21,8 @@ def fetch_dir(target_dir: Path) -> None:
                 check=True,
                 )
         print('OK')
-    except subprocess.CalledProcessError:
-        print('Error (git process finished with an error)')
+    except subprocess.CalledProcessError as ex:
+        print(f'Error\n{ex.stderr.decode()}')
         sys.exit(1)
 
 
