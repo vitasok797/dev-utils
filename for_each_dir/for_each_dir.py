@@ -2,6 +2,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+CONSOLE_ENCODING = 'cp866'
+
 
 def process_dir(target_dir: Path, commands: list[str]) -> None:
     print(f'Processing dir "{target_dir.name}"... ', end='', flush=True)
@@ -13,6 +15,7 @@ def process_dir(target_dir: Path, commands: list[str]) -> None:
     for command in commands:
         process_command(target_dir, command)
 
+    print('OK')
 
 def process_command(target_dir: Path, command: str) -> None:
     try:
@@ -23,14 +26,17 @@ def process_command(target_dir: Path, command: str) -> None:
                 shell=True,
                 check=True,
                 )
-        print('OK')
     except subprocess.CalledProcessError as ex:
-        print(f'Error\n{ex.stderr.decode()}')
+        error_message = ex.stderr.decode(encoding=CONSOLE_ENCODING)
+        print(f'Error\n{error_message}')
         sys.exit(1)
 
 
 def main() -> None:
     commands = sys.argv[1:]
+    if not commands:
+        print('Error: no commands provided')
+        sys.exit(1)
 
     work_dir = Path()
     dir_items = work_dir.glob('*')
