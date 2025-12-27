@@ -17,6 +17,7 @@ def process_dir(target_dir: Path, commands: list[str]) -> None:
 
     print('OK')
 
+
 def process_command(target_dir: Path, command: str) -> None:
     try:
         subprocess.run(
