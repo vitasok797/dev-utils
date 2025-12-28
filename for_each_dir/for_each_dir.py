@@ -1,8 +1,7 @@
+import locale
 import subprocess
 import sys
 from pathlib import Path
-
-CONSOLE_ENCODING = 'cp866'
 
 
 def process_dir(target_dir: Path, commands: list[str]) -> None:
@@ -19,17 +18,19 @@ def process_dir(target_dir: Path, commands: list[str]) -> None:
 
 
 def process_command(target_dir: Path, command: str) -> None:
+    console_encoding = 'oem' if sys.platform == 'win32' else locale.getpreferredencoding()
+
     try:
         subprocess.run(
                 command,
                 cwd=target_dir,
-                capture_output=True,
                 shell=True,
                 check=True,
+                capture_output=True,
+                encoding=console_encoding,
                 )
     except subprocess.CalledProcessError as ex:
-        error_message = ex.stderr.decode(encoding=CONSOLE_ENCODING)
-        print(f'Error\n{error_message}')
+        print(f'Error\n{ex.stderr}')
         sys.exit(1)
 
 
