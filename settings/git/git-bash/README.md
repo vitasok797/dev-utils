@@ -1,10 +1,10 @@
 # Git bash configuration
 
 ## Prompt
-Save `git-prompt.sh` file to `<GitDir>\etc\profile.d\` directory
+Save `git-prompt.sh` file to `<git_dir>\etc\profile.d\` directory
 
 ## Bash aliases
-Add to `<GitDir>\etc\profile.d\aliases.sh` file:
+Add to `<git_dir>\etc\profile.d\aliases.sh` file:
 ```sh
 alias st='echo && git st && echo && git lg'
 ```
