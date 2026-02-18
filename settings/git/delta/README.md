@@ -1,10 +1,6 @@
 # Delta configuration
 
-distro
+[Download](https://github.com/dandavison/delta/releases)
 
-Copy `delta.gitconfig` file to `` dir
-
-# git config set --local --append include.path ../delta.gitconfig
-
-[include]
-path = ../delta.gitconfig
+* Save `delta.gitconfig` file to system/global git config location dir
+* Run `git config set --<system|global> --append include.path delta.gitconfig`
