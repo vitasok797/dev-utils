@@ -1,6 +1,6 @@
 # Git-bash configuration
 
-## Bash Prompt
+## Bash prompt
 Save `git-prompt.sh` file to `<git_dir>\etc\profile.d` directory
 
 ## Bash aliases
