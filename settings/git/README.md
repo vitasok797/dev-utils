@@ -4,10 +4,7 @@
 
 ## Show configuration
 ```
-git config --list --show-origin
-```
-```
-git config --list --show-scope
+git config --list --show-scope --show-origin
 ```
 
 ## Common options
