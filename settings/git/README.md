@@ -2,7 +2,7 @@
 
 * [git-config](https://git-scm.com/docs/git-config)
 
-#### Show configuration
+## Show configuration
 ```
 git config --list --show-origin
 ```
@@ -10,7 +10,7 @@ git config --list --show-origin
 git config --list --show-scope
 ```
 
-#### Common options
+## Common options
 ```bash
 # Username and email
 git config <scope> user.name "<username>"
@@ -78,13 +78,13 @@ git config <scope> alias.st "status"
 * `true` (`--ff`, fast-forward when possible)
 * `only` (`--ff-only`)
 
-#### Set proxy options
+## Set proxy options
 ```bash
 git config <scope> http.proxy <proxy>
 git config <scope> http.schannelcheckrevoke false
 ```
 
-#### Set WinMerge as TortoiseGit/SVN diff tool
+## Set WinMerge as TortoiseGit/SVN diff tool
 ```
 "C:\path\to\WinMergeU.exe" /u /fl /wr /e /dl %bname /dr %yname %base %mine
 ```
