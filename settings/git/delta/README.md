@@ -5,8 +5,8 @@
 ```bash
 git config --list --show-origin
 ```
-* Save `delta.gitconfig` file to system/global dir
-* Execute:
+* Save `delta.gitconfig` file to selected system/global dir
+* Execute with selected system/global scope:
 ```bash
 git config set --<system|global> --append include.path delta.gitconfig
 ```
