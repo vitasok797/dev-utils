@@ -1,5 +1,5 @@
-## Configuration 📌
-* [My Git settings](https://github.com/vitasok797/dev-utils/tree/main/settings/git) 🔗
+# Git configuration
+
 * [git-config](https://git-scm.com/docs/git-config)
 
 #### Show configuration
