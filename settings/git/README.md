@@ -13,61 +13,56 @@ git config --list --show-scope
 ## Common options
 ```bash
 # Username and email
-git config <scope> user.name "<username>"
-git config <scope> user.email <email>
+git config --<system|global> user.name "<username>"
+git config --<system|global> user.email <email>
 
 # EOL conversion
-git config <scope> core.eol native
-git config <scope> core.autocrlf <input|true>
+git config --<system|global> core.eol native
+git config --<system|global> core.autocrlf <input|true>
 
 # Fast-forward and rebase policy
-git config <scope> merge.ff false
-git config <scope> pull.ff only
-git config <scope> pull.rebase false
+git config --<system|global> merge.ff false
+git config --<system|global> pull.ff only
+git config --<system|global> pull.rebase false
 
 # Enable automatic fetch --prune
-git config <scope> fetch.prune true
-git config <scope> fetch.pruneTags true
+git config --<system|global> fetch.prune true
+git config --<system|global> fetch.pruneTags true
 
 # Log format
-git config <scope> format.pretty "%C(yellow)%h%C(auto)%d %Cblue%as (%ar) %Cgreen%an %Creset%s"
+git config --<system|global> format.pretty "%C(yellow)%h%C(auto)%d %Cblue%as (%ar) %Cgreen%an %Creset%s"
 
 # Status format
-git config <scope> status.short true
-git config <scope> status.branch true
+git config --<system|global> status.short true
+git config --<system|global> status.branch true
 
 # Set WinMerge as diff tool
-git config <scope> diff.guitool winmerge
-git config <scope> difftool.prompt false
-git config <scope> difftool.guiDefault true
-git config <scope> difftool.winmerge.cmd "'<C:\\path\\to\\WinMergeU.exe>' -u -fl -wr -e \"\$LOCAL\" \"\$REMOTE\""
+git config --<system|global> diff.guitool winmerge
+git config --<system|global> difftool.prompt false
+git config --<system|global> difftool.guiDefault true
+git config --<system|global> difftool.winmerge.cmd "'<C:\\path\\to\\WinMergeU.exe>' -u -fl -wr -e \"\$LOCAL\" \"\$REMOTE\""
 
 # Set TortoiseMerge as merge tool
-git config <scope> merge.guitool tortoisemerge
-git config <scope> mergetool.prompt false
-git config <scope> mergetool.guiDefault true
-git config <scope> mergetool.keepBackup false
+git config --<system|global> merge.guitool tortoisemerge
+git config --<system|global> mergetool.prompt false
+git config --<system|global> mergetool.guiDefault true
+git config --<system|global> mergetool.keepBackup false
 
 # Aliases
-git config <scope> alias.aliases "config --get-regexp alias\."
-git config <scope> alias.br "branch -vv"
-git config <scope> alias.ch "diff --check"
-git config <scope> alias.dt "difftool -d"
-git config <scope> alias.dt-s "difftool -d --staged"
-git config <scope> alias.lg "log --all --graph"
-git config <scope> alias.lg-f "log --all --graph --first-parent"
-git config <scope> alias.log-h "log --format=\"%C(yellow)%h%C(auto)%d %Cblue%as (%ar) %Cgreen%an %Creset%B\""
-git config <scope> alias.ls-i "ls-files --eol"
-git config <scope> alias.ls-ig "ls-files --other --exclude-standard --ignored"
-git config <scope> alias.ls-un "ls-files --eol --other --exclude-standard"
-git config <scope> alias.show-h "show --format=fuller --no-patch"
-git config <scope> alias.st "status"
+git config --<system|global> alias.aliases "config --get-regexp alias\."
+git config --<system|global> alias.br "branch -vv"
+git config --<system|global> alias.ch "diff --check"
+git config --<system|global> alias.dt "difftool -d"
+git config --<system|global> alias.dt-s "difftool -d --staged"
+git config --<system|global> alias.lg "log --all --graph"
+git config --<system|global> alias.lg-f "log --all --graph --first-parent"
+git config --<system|global> alias.log-h "log --format=\"%C(yellow)%h%C(auto)%d %Cblue%as (%ar) %Cgreen%an %Creset%B\""
+git config --<system|global> alias.ls-i "ls-files --eol"
+git config --<system|global> alias.ls-ig "ls-files --other --exclude-standard --ignored"
+git config --<system|global> alias.ls-un "ls-files --eol --other --exclude-standard"
+git config --<system|global> alias.show-h "show --format=fuller --no-patch"
+git config --<system|global> alias.st "status"
 ```
-
-`<scope>` options:
-* `--system`
-* `--global`
-* `--local`
 
 `core.autocrlf` options:
 * `input`: Git will convert CRLF to LF during commit (Linux, Windows)
@@ -80,8 +75,8 @@ git config <scope> alias.st "status"
 
 ## Set proxy options
 ```bash
-git config <scope> http.proxy <proxy>
-git config <scope> http.schannelcheckrevoke false
+git config --<system|global> http.proxy <proxy>
+git config --<system|global> http.schannelcheckrevoke false
 ```
 
 ## Set WinMerge as TortoiseGit/SVN diff tool
