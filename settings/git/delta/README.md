@@ -1,6 +1,6 @@
 # Delta configuration
 
-* [Download](https://github.com/dandavison/delta/releases)
+* [Download](https://github.com/dandavison/delta/releases) and install
 * Select system/global git config location dir:
 ```bash
 git config --list --show-origin
