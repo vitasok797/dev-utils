@@ -5,4 +5,4 @@
 ```
 alias st='echo && git st && echo && git lg'
 ```
-* Apply `console_colors.reg`
+* Apply `console_colors.reg` file
